@@ -22,6 +22,9 @@
   padding-bottom: 30px;
   overflow: auto; /* code added */
 }
+#actualideas {
+  font-size: min(26px,1.35rem);
+}
 @media only screen and (max-width: 800px) {
   #app {
   }
