@@ -151,12 +151,13 @@ export default {
         justify-content: space-between;
       "
     >
-      <div style="margin: 40px 0">
+      <div style="margin: 40px 0" 
+          class="noselect">
         <div
-          style="font-size: 50px; font-weight: 700; text-align: center"
+          style="font-size: 50px; font-weight: 700; text-align: center; letter-spacing: 1.5px"
           class="Arima"
         >
-          GimmeIdeas!
+          CPIdeas
         </div>
         <div
           style="
@@ -210,13 +211,13 @@ export default {
             vertical-align: bottom;
             font-size: 25px;
           "
-          class="Raleway"
+          class="Raleway noselect"
         >
           <span
             :style="{ cursor: 'pointer', fontWeight: lang ? 500 : 700 }"
             @click="lang = 0"
             >EN</span
-          >/<span
+          > / <span
             :style="{ cursor: 'pointer', fontWeight: lang ? 700 : 500 }"
             @click="lang = 1"
             >CN</span
