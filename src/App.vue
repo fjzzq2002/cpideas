@@ -201,7 +201,8 @@ export default {
         />
       </div>
       <div
-        style="margin: 40px auto; font-size: 20px; text-underline-offset: 2px"
+        style="margin: 40px auto; font-size: 20px; text-underline-offset: 2px;
+        display: flex; justify-content: center; align-items: center; flex-direction: column"
         class="Raleway"
       >
         <div
@@ -214,13 +215,13 @@ export default {
           class="Raleway noselect"
         >
           <span
-            :style="{ cursor: 'pointer', fontWeight: lang ? 500 : 700 }"
+            :style="{ cursor: 'pointer', color: lang ? '#737067' : 'black' }"
             @click="lang = 0"
-            >EN</span
+            >English</span
           > / <span
-            :style="{ cursor: 'pointer', fontWeight: lang ? 700 : 500 }"
+            :style="{ cursor: 'pointer', color: (!lang) ? '#737067' : 'black'}"
             @click="lang = 1"
-            >CN</span
+            >简体中文</span
           >
         </div>
         <u
@@ -290,8 +291,8 @@ export default {
         <span
           v-html="
             lang
-              ? '造题快乐！如果有什么建议或想要吐槽的地方欢迎在<a href=&quot;asd&quot;>这里</a>评论。'
-              : 'Have fun making problems! Comment <a href=&quot;asd&quot;>here</a> if you have any concerns/suggestions!'
+              ? '造题快乐！如果有什么建议或想要吐槽的地方欢迎在<a href=&quot;https://codeforces.com/blog/entry/104374&quot;>这里</a>评论。'
+              : 'Have fun making problems! Comment <a href=&quot;https://codeforces.com/blog/entry/104374&quot;>here</a> if you have any concerns/suggestions!'
           "
         ></span
         ><br /><br />
