@@ -22,6 +22,19 @@
   padding-bottom: 30px;
   overflow: auto; /* code added */
 }
+@media only screen and (max-width: 800px) {
+  #app {
+  }
+  #leftbar {
+    position: relative !important;
+  }
+  #content {
+    margin-left: 0px;
+  }
+  #leftbar {
+    width: 100% !important;
+  }
+}
 .noselect {
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */
