@@ -262,7 +262,7 @@ export default {
           v-html="
             lang
               ? '注意：你所看到的文字由 GPT-3 在指导下生成。GPT-3 是 OpenAI 的大规模预训练语言生成模型。输出可能包含有争议性和有冒犯性的内容，读者应该审慎地对待本项目的输出。'
-              : 'Disclaimer: The text is generated in part with GPT-3, OpenAI\’s large-scale language-generation model. The output may contain inapproprimate contents and should be treated with care.'
+              : 'Disclaimer: The text is generated in part with GPT-3, OpenAI\’s large-scale language-generation model. The output may contain inappropriate contents and should be treated with care.'
           "
         ></span>
         <br /><br />
