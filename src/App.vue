@@ -360,7 +360,7 @@ export default {
         >
         </span>
       </div>
-      <div id="actualideas" :style="{ display: faq ? 'none' : 'block' }">
+      <div id="actualideas" :style="{ display: faq ? 'none' : 'block', paddingTop: flow?'0':'5px' }">
         <idea-component
           v-for="idea in ideas"
           :idea="idea"
