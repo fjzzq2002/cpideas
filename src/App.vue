@@ -73,8 +73,8 @@ function shuffle(array) {
   return array;
 }
 shuffle(ideas0);
-
-const colors = ["#FBECE6", "#FAEEDF", "#ECF2E5", "#ECF0EA", "#F1EFEC"];
+// 2nd: interpolate between original color and #D3B75B
+const colors = [["#FBECE6","#DCCBA3"], ["#FAEEDF","#DCCCA0"], ["#ECF2E5","#D7CDA2"], ["#ECF0EA","#D7CCA4"], ["#F1EFEC", "#D9CCA5"]];
 let ideas,
   data,
   u = [],
@@ -145,6 +145,7 @@ export default {
       ideas: u,
       faq: 0,
       lang: 0,
+      flow: 0,
       regen: regen,
       prettify: function (ts) {
         return ts;
@@ -231,6 +232,27 @@ export default {
           class="Raleway noselect"
         >
           <span
+            :style="{ cursor: 'pointer', color: flow ? '#737067' : 'black' }"
+            @click="flow = 0"
+            v-html="lang?'列表模式':'List Style'"
+            ></span
+          > / <span
+            :style="{ cursor: 'pointer', color: (!flow) ? '#737067' : 'black'}"
+            @click="flow = 1"
+            v-html="lang?'心流模式':'Flow Style'"
+            ></span
+          >
+        </div>
+        <div
+          style="
+            margin-bottom: 15px;
+            text-align: center;
+            vertical-align: bottom;
+            font-size: 25px;
+          "
+          class="Raleway noselect"
+        >
+          <span
             :style="{ cursor: 'pointer', color: lang ? '#737067' : 'black' }"
             @click="lang = 0"
             >English</span
@@ -307,8 +329,8 @@ export default {
         <span
           v-html="
             lang
-              ? '造题快乐！如果有什么建议或想要吐槽的地方欢迎在<a href=&quot;https://codeforces.com/blog/entry/104374&quot;>这里</a>评论。'
-              : 'Have fun making problems! Comment <a href=&quot;https://codeforces.com/blog/entry/104374&quot;>here</a> if you have any concerns/suggestions!'
+              ? '造题快乐！如果有什么建议或想要吐槽的地方欢迎在<a href=&quot;https://codeforces.com/blog/entry/104374&quot;>这里</a>评论。<br>感谢 @Alon-Tanay 设计的列表模式！'
+              : 'Have fun making problems! Comment <a href=&quot;https://codeforces.com/blog/entry/104374&quot;>here</a> if you have any concerns/suggestions!<br>Thanks @Alon-Tanay for the list style design!'
           "
         ></span
         ><br /><br />
@@ -343,6 +365,7 @@ export default {
           v-for="idea in ideas"
           :idea="idea"
           :lang="lang"
+          :flow="flow"
           :key="idea.id"
         />
       </div>
